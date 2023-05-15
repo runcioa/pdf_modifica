@@ -6,13 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+            width: 500px;
+            height: 100px;
+            display: block;
+            margin: 10px;
+            border: 1px solid black;
+            content: "scegli file";
+        }
+    </style>
 </head>
 
 <body>
-   
+
     <h1>Upload</h1>
-    <input type="file" name="file1" id="file1">
-    <input type="file" name="file2" id="file2">
+
+    <div id="primo_file">
+        <label for="file1">Scegli o trascina il primo file</label>
+        <input type="file" name="file1" id="file1">
+    </div>
+    <div id="secondo_file">
+        <label for="file2">Scegli o trascina il secondo file</label>
+        <input type="file" name="file2" id="file2">
+    </div>
+   
 
     <button id="upload-button" onclick="upload()"> Upload </button>
 
@@ -29,6 +47,7 @@
             formData.append("file1", fileField1.files[0]);
             formData.append("file2", fileField2.files[0]);
 
+
             try {
                 const response = await fetch("/upload.php", {
                     method: "POST",
@@ -40,9 +59,6 @@
                 console.error("Error:", error);
             }
         }
-
-
-       
     </script>
 
 
