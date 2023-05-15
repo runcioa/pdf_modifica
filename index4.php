@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <!-- <form method="post" enctype="multipart/form-data"> -->
+   
     <input type="file" name="file1" id="file1">
 
     <button id="upload-button" onclick="upload()"> Upload </button>
 
-    <!-- </form> -->
+
 
     <script>
         async function upload() {
