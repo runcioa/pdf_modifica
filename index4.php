@@ -10,7 +10,9 @@
 
 <body>
    
+    <h1>Upload</h1>
     <input type="file" name="file1" id="file1">
+    <input type="file" name="file2" id="file2">
 
     <button id="upload-button" onclick="upload()"> Upload </button>
 
@@ -20,15 +22,12 @@
         async function upload() {
 
             const formData = new FormData();
-            const fileField = document.querySelector('input[type="file"]');
+            const fileField1 = document.getElementById("file1");
+            const fileField2 = document.getElementById("file2");
 
             //Deve essere il nome del file che si trova nel $_FILES del php
-            formData.append("file3", fileField.files[0]);
-
-
-            console.log(fileField.files[0]);
-
-
+            formData.append("file1", fileField1.files[0]);
+            formData.append("file2", fileField2.files[0]);
 
             try {
                 const response = await fetch("/upload.php", {
